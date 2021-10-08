@@ -3,9 +3,10 @@ DROP TABLE IF EXISTS event;
 
 CREATE TABLE event
 (
-    itemsID INTEGER NOT NULL,
+    event_id VARCHAR(100) NOT NULL,
     status VARCHAR(100) NULL,
     event_date VARCHAR(100) NULL,
     rsvp_count INTEGER NULL,
-    PRIMARY KEY (itemsID)
+    link VARCHAR(300) NULL,
+    PRIMARY KEY (event_id)
 );
