@@ -17,9 +17,17 @@ def createdb(db_file_name, json_file_name):
         event_date = data[event]['local_date']
         rsvp_count = data[event]['yes_rsvp_count']
         link = data[event]['link']
-        c.execute("INSERT INTO event (event_id, status, event_date, rsvp_count,link) VALUES (?,?,?,?,?)",
-                  (event_id, status, event_date, rsvp_count, link))
-
+        c.execute(
+            "INSERT INTO event (event_id, status, event_date, rsvp_count,link) "
+            "VALUES (?,?,?,?,?)",
+            (event_id, status, event_date, rsvp_count, link))
+        if "venue" in data[event] and "lat" in data[event]['venue']:
+            venue = data[event]['venue']
+            venue_lat = venue['lat']
+            venue_lon = venue['lon']
+            venue_city = venue['city']
+            c.execute("UPDATE event set venue_lat = ?, venue_lon = ?, venue_city = ? where event_id = ?",
+                      (venue_lat, venue_lon, venue_city, event_id))
     connection.commit()
 
 
