@@ -1,5 +1,5 @@
 venv/
 .idea
 .ipynb_checkpoints/
-*.doc
+*.docx
 Problem Set 6.pdf
