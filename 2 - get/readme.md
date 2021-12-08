@@ -14,6 +14,36 @@ when and where. I didn't care about the cost and I also wanted to omit the event
 * type: Include all type of events - past,upcoming
 * omit: name,description,date_in_series_pattern,updated,utc_offset,is_online_event,group,visibility,member_pay_fee,how_to_find_us
 
+Here is an example of one event:
+```
+"294": {
+    "created": 1632768628000,
+    "duration": 14400000,
+    "id": "281053389",
+    "rsvp_limit": 45,
+    "status": "upcoming",
+    "time": 1634511600000,
+    "local_date": "2021-10-17",
+    "local_time": "16:00",
+    "waitlist_count": 4,
+    "yes_rsvp_count": 46,
+    "venue": {
+      "id": 26639314,
+      "name": "Bob's Corn & Pumpkin Farm",
+      "lat": 47.841217041015625,
+      "lon": -122.08440399169922,
+      "repinned": false,
+      "address_1": "10917 Elliott Rd",
+      "city": "Snohomish",
+      "country": "us",
+      "localized_country_name": "USA",
+      "zip": "98296",
+      "state": "WA"
+    },
+    "link": "https://www.meetup.com/1-5GenAsians/events/281053389/"
+  }
+```
+
 ## Procedure
 
 Since the free tier limits to only 500 objects as the response payload, I had to make two separate requests to get all

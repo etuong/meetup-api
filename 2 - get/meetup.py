@@ -15,12 +15,15 @@ def createdb(db_file_name, json_file_name):
         event_id = data[event]['id']
         status = data[event]['status']
         event_date = data[event]['local_date']
+        event_time = data[event]['local_time']
         rsvp_count = data[event]['yes_rsvp_count']
+        waitlist_count = data[event]['waitlist_count']
+        duration = data[event]['duration'] if "duration" in data[event] else 0
         link = data[event]['link']
         c.execute(
-            "INSERT INTO event (event_id, status, event_date, rsvp_count,link) "
-            "VALUES (?,?,?,?,?)",
-            (event_id, status, event_date, rsvp_count, link))
+            "INSERT INTO event (event_id, status, event_date, event_time, waitlist_count, duration, rsvp_count,link) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (event_id, status, event_date, event_time, waitlist_count, duration, rsvp_count, link))
         if "venue" in data[event] and "lat" in data[event]['venue']:
             venue = data[event]['venue']
             venue_lat = venue['lat']
