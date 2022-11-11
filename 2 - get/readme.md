@@ -9,12 +9,13 @@ from https://secure.meetup.com/meetup_api/console/
 The console is an interface with fields for the query. I wanted information pertaining on the events like the what and
 when and where. I didn't care about the cost and I also wanted to omit the event description to reduce the file size. Below are my input fields.
 
-* urlname: This is the name of the group, 1-5GenAsians 
-* no_later_than: Second request requires timestamp from the first, 2018-12-22T00:00:00.000
-* type: Include all type of events - past,upcoming
-* omit: name,description,date_in_series_pattern,updated,utc_offset,is_online_event,group,visibility,member_pay_fee,how_to_find_us
+- urlname: This is the name of the group, 1-5GenAsians
+- no_later_than: Second request requires timestamp from the first, 2018-12-22T00:00:00.000
+- type: Include all type of events - past,upcoming
+- omit: name,description,date_in_series_pattern,updated,utc_offset,is_online_event,group,visibility,member_pay_fee,how_to_find_us
 
 Here is an example of one event:
+
 ```
 "294": {
     "created": 1632768628000,
